@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>乗りログ</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <h2 id="time"></h2>
+  <h1>乗りログ</h1>
+  <div>
+    <table>
+      <tr>
+        <td>出発地</td>
+        <td>目的地</td>
+      </tr>
+      <tr>
+        <td><input type="text" name="your name" value=""></td>
+        <td><input type="text" name="your name" value=""></td>
+        <td><button type="button" id="submit_button">追加</button></td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>メモ</td>
+        <td><textarea name="your message" rows="2" cols="40"></textarea></td>
+      </tr>
+    </table>
+    <h2>乗り物一覧</h2>
+    <table>
+      <tr>
+        <th>出発</th>
+        <th>到着</th>
+        <th>日時</th>
+        <th>メモ</th>
+      </tr>
+      <tr class="even">
+        <td>御嵩山</td>
+        <td>片瀬江ノ島</td>
+        <td>2017-10-31</td>
+        <td>サーフィン</td>
+      </tr>
+      <tr class="odd">
+        <td>御嵩山</td>
+        <td>代々木</td>
+        <td>2017-10-31</td>
+        <td>BPStudy</td>
+      </tr>
+    </table>
+  </div>
+  <script type="text/javascript">
+    document.getElementById("submit_button").onclick = function(){
+      confirm("この内容を保存しますか？")
+    }
+
+    time();
+    function time(){
+
+      var now = new Date();
+      document.getElementById("time").innerHTML = now.toLocaleString();
+    }
+    setInterval('time()',1000);
+
+  </script>
+</body>
+
+</html>
